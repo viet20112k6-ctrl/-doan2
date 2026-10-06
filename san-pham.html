@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#c6542d" />
+    <meta
+      name="description"
+      content="EnCiVi — nội thất tinh gọn cho từng góc nhà. Khám phá phòng khách, phòng ngủ và phòng ăn theo phong cách của bạn."
+    />
+    <title>Sản phẩm | EnCiVi</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="shop">
+    <a class="skip-link" href="#main">Đến nội dung chính</a>
+    <div data-include="components/header.html"></div>
+    <main id="main" tabindex="-1">
+      <noscript
+        ><div class="noscript">
+          Hãy bật JavaScript để sử dụng các chức năng EnCiVi.
+        </div></noscript
+      >
+      <section id="view-shop" class="view" aria-labelledby="shopTitle">
+        <div class="container page-shell">
+          <div class="page-heading">
+            <p class="eyebrow">Bộ sưu tập EnCiVi</p>
+            <h1 id="shopTitle">Nội thất cho từng góc nhà</h1>
+            <p>Chọn món đồ phù hợp với không gian và phong cách của bạn.</p>
+          </div>
+          <div class="catalog-layout">
+            <aside class="filter-panel" aria-label="Lọc sản phẩm">
+              <h2 class="filter-title">KHÔNG GIAN</h2>
+              <div class="category-list" id="categoryList"></div>
+              <button class="text-button" data-action="reset-filters">
+                Xóa bộ lọc
+              </button>
+            </aside>
+            <div>
+              <div class="catalog-toolbar">
+                <label class="search-field"
+                  ><svg class="icon" aria-hidden="true">
+                    <use href="#i-search"></use></svg
+                  ><input
+                    type="search"
+                    id="shopSearch"
+                    aria-label="Tìm theo tên sản phẩm"
+                    placeholder="Tìm sofa, giường, bàn ăn…"
+                    maxlength="100" /></label
+                ><label class="sort-control" for="sortSelect"
+                  >Sắp xếp<select id="sortSelect">
+                    <option value="featured">Nổi bật</option>
+                    <option value="price-asc">Giá tăng dần</option>
+                    <option value="price-desc">Giá giảm dần</option>
+                  </select></label
+                >
+              </div>
+              <p class="result-count" id="resultCount" aria-live="polite"></p>
+              <div class="product-grid" id="productGrid"></div>
+              <div class="empty-state" id="noProducts" hidden="">
+                <svg class="icon" aria-hidden="true">
+                  <use href="#i-search"></use>
+                </svg>
+                <h2>Chưa tìm thấy sản phẩm</h2>
+                <p>Thử từ khóa khác hoặc chọn lại không gian.</p>
+                <button class="btn btn-dark" data-action="reset-filters">
+                  Xem tất cả sản phẩm
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <div data-include="components/dialogs.html"></div>
+    <div data-include="components/icons.html"></div>
+    <script src="js/layout.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

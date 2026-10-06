@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#c6542d" />
+    <meta
+      name="description"
+      content="EnCiVi — nội thất tinh gọn cho từng góc nhà. Khám phá phòng khách, phòng ngủ và phòng ăn theo phong cách của bạn."
+    />
+    <title>Đơn hàng của bạn | EnCiVi</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="orders">
+    <a class="skip-link" href="#main">Đến nội dung chính</a>
+    <div data-include="components/header.html"></div>
+    <main id="main" tabindex="-1">
+      <noscript
+        ><div class="noscript">
+          Hãy bật JavaScript để sử dụng các chức năng EnCiVi.
+        </div></noscript
+      >
+      <section id="view-orders" class="view" aria-labelledby="ordersTitle">
+        <div class="container page-shell orders-wrap">
+          <div class="page-heading">
+            <p class="eyebrow">EnCiVi / Đơn hàng</p>
+            <h1 id="ordersTitle">Đơn hàng của bạn</h1>
+            <p>Theo dõi các đơn hàng thử của tài khoản đang đăng nhập.</p>
+          </div>
+          <div id="ordersGate" class="empty-state" hidden>
+            <h2>Đăng nhập để xem đơn hàng</h2>
+            <p>Mỗi tài khoản chỉ hiển thị đơn hàng của mình.</p>
+            <a
+              class="btn btn-primary"
+              href="dang-nhap.html?next=orders"
+              data-login-next="orders"
+              >Đăng nhập</a
+            >
+          </div>
+          <div id="ordersList" class="orders-list"></div>
+          <div id="noOrders" class="empty-state" hidden="">
+            <svg class="icon" aria-hidden="true"><use href="#i-box"></use></svg>
+            <h2>Bạn chưa có đơn hàng nào</h2>
+            <p>Chọn một món nội thất để trải nghiệm đặt hàng.</p>
+            <a class="btn btn-primary" href="san-pham.html"
+              >Khám phá sản phẩm</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <div data-include="components/dialogs.html"></div>
+    <div data-include="components/icons.html"></div>
+    <script src="js/layout.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>

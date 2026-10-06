@@ -1,0 +1,136 @@
+<div class="announcement">
+  Một chút đổi mới. Một tổ ấm nhiều cảm hứng.<a
+    data-view="shop"
+    href="san-pham.html"
+  >
+    Khám phá nội thất
+  </a>
+</div>
+<header class="site-header">
+  <div class="container header-row">
+    <a
+      class="header-brand"
+      data-view="home"
+      aria-label="EnCiVi — Trang chủ"
+      href="index.html"
+    >
+      <span class="brand">EnCiVi<span class="brand-dot">.</span></span
+      ><span class="brand-sub">NỘI THẤT CHO TỔ ẤM</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Điều hướng chính">
+      <a class="nav-item" data-view="home" href="index.html">Trang chủ</a>
+      <a class="nav-item" data-view="shop" href="san-pham.html">Sản phẩm</a>
+      <a
+        class="nav-item room-nav"
+        href="san-pham.html?category=Ph%C3%B2ng%20Kh%C3%A1ch"
+      >
+        Phòng khách
+      </a>
+      <a
+        class="nav-item room-nav"
+        href="san-pham.html?category=Ph%C3%B2ng%20Ng%E1%BB%A7"
+      >
+        Phòng ngủ
+      </a>
+      <a class="nav-item" data-view="orders" href="don-hang.html">
+        Đơn hàng <span class="nav-count" id="orderBadge" hidden="">0</span>
+      </a>
+      <a
+        class="nav-item admin-nav"
+        data-view="admin"
+        hidden=""
+        href="quan-tri.html"
+      >
+        Quản trị
+      </a>
+    </nav>
+    <div class="header-actions">
+      <form
+        class="header-search"
+        id="headerSearchForm"
+        action="san-pham.html"
+        method="get"
+        role="search"
+      >
+        <button class="search-submit" type="submit" aria-label="Tìm sản phẩm">
+          <svg class="icon" aria-hidden="true">
+            <use href="#i-search"></use>
+          </svg>
+        </button>
+        <input
+          type="search"
+          id="headerSearch"
+          name="q"
+          aria-label="Tìm kiếm sản phẩm"
+          placeholder="Tìm sofa, giường…"
+          maxlength="100"
+        />
+      </form>
+      <button
+        class="icon-button"
+        data-action="account"
+        id="accountButton"
+        aria-label="Đăng nhập tài khoản"
+        title="Đăng nhập / Đăng ký"
+      >
+        <svg class="icon" aria-hidden="true"><use href="#i-user"></use></svg>
+      </button>
+      <a
+        class="icon-button cart-button"
+        aria-label="Giỏ hàng"
+        id="cartButton"
+        href="gio-hang.html"
+      >
+        <svg class="icon" aria-hidden="true"><use href="#i-bag"></use></svg
+        ><span class="count-badge" id="cartBadge" hidden="">0</span>
+      </a>
+      <button
+        class="icon-button menu-toggle"
+        id="menuButton"
+        data-action="menu"
+        aria-label="Mở menu"
+        aria-expanded="false"
+        aria-controls="mobileMenu"
+      >
+        <svg class="icon" aria-hidden="true"><use href="#i-menu"></use></svg>
+      </button>
+    </div>
+  </div>
+  <nav
+    class="mobile-menu"
+    id="mobileMenu"
+    aria-label="Điều hướng trên điện thoại"
+    hidden=""
+  >
+    <form
+      class="search-field"
+      id="mobileSearchForm"
+      action="san-pham.html"
+      method="get"
+      role="search"
+    >
+      <button class="search-submit" type="submit" aria-label="Tìm sản phẩm">
+        <svg class="icon" aria-hidden="true"><use href="#i-search"></use></svg>
+      </button>
+      <input
+        type="search"
+        id="mobileSearch"
+        name="q"
+        aria-label="Tìm kiếm sản phẩm trên điện thoại"
+        placeholder="Bạn đang tìm món nội thất nào?"
+        maxlength="100"
+      />
+    </form>
+    <div class="mobile-links">
+      <a data-view="home" href="index.html">Trang chủ</a
+      ><a data-view="shop" href="san-pham.html">Tất cả sản phẩm</a>
+      <a href="san-pham.html?category=Ph%C3%B2ng%20Kh%C3%A1ch">Phòng khách</a
+      ><a href="san-pham.html?category=Ph%C3%B2ng%20Ng%E1%BB%A7">Phòng ngủ</a>
+      <a href="san-pham.html?category=Ph%C3%B2ng%20%C4%82n">Phòng ăn</a
+      ><a data-view="orders" href="don-hang.html">Đơn hàng của bạn</a>
+      <a class="admin-nav" data-view="admin" hidden="" href="quan-tri.html"
+        >Quản trị</a
+      ><button data-action="account">Tài khoản</button>
+    </div>
+  </nav>
+</header>
