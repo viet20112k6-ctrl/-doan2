@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#c6542d" />
+    <meta
+      name="description"
+      content="EnCiVi — nội thất tinh gọn cho từng góc nhà. Khám phá phòng khách, phòng ngủ và phòng ăn theo phong cách của bạn."
+    />
+    <title>Đăng ký tài khoản | EnCiVi</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body data-page="register">
+    <a class="skip-link" href="#main">Đến nội dung chính</a>
+    <div data-include="components/header.html"></div>
+    <main id="main" tabindex="-1">
+      <noscript
+        ><div class="noscript">
+          Hãy bật JavaScript để dùng đăng ký và đăng nhập.
+        </div></noscript
+      >
+      <section
+        class="container auth-layout view"
+        id="view-register"
+        aria-labelledby="registerTitle"
+      >
+        <aside class="auth-story">
+          <img
+            src="images/living.jpg"
+            alt="Góc phòng khách ấm áp với nội thất EnCiVi"
+            width="600"
+            height="750"
+          />
+          <div class="auth-story-copy">
+            <p class="eyebrow">Tổ ấm của riêng bạn</p>
+            <h2>Lưu những lựa chọn bạn yêu thích.</h2>
+            <p>
+              Một tài khoản riêng để giữ giỏ hàng và theo dõi các đơn hàng của
+              bạn.
+            </p>
+          </div>
+        </aside>
+        <div class="auth-panel">
+          <div class="auth-heading">
+            <p class="eyebrow">Tài khoản khách hàng</p>
+            <h1 id="registerTitle">Tạo tài khoản của bạn</h1>
+            <p>Đăng ký để có giỏ hàng và lịch sử đơn hàng riêng.</p>
+          </div>
+          <div id="authSignedIn" class="auth-signed-in" hidden>
+            <h2>Bạn đã đăng nhập</h2>
+            <p id="authSignedInName"></p>
+            <a
+              class="btn btn-primary btn-wide"
+              id="authContinue"
+              href="san-pham.html"
+              >Tiếp tục</a
+            ><button class="text-button" data-action="logout">
+              Đăng xuất để dùng tài khoản khác
+            </button>
+          </div>
+          <form id="registerForm" class="auth-form">
+            <div class="field">
+              <label for="registerFullName">Họ và tên</label
+              ><input
+                id="registerFullName"
+                name="fullName"
+                autocomplete="name"
+                required
+                minlength="2"
+                maxlength="100"
+                placeholder="Nguyễn Văn An"
+              />
+            </div>
+            <div class="field">
+              <label for="registerUsername">Tên tài khoản</label
+              ><input
+                id="registerUsername"
+                name="username"
+                autocomplete="username"
+                required
+                minlength="4"
+                maxlength="30"
+                placeholder="Ví dụ: viet2012"
+                aria-describedby="usernameHint"
+              />
+              <p class="hint" id="usernameHint">
+                4–30 chữ không dấu, số, dấu chấm hoặc gạch dưới.
+              </p>
+            </div>
+            <div class="field">
+              <label for="registerEmail">Email</label
+              ><input
+                id="registerEmail"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+                maxlength="120"
+                placeholder="email@example.com"
+              />
+            </div>
+            <div class="field">
+              <label for="registerPassword">Mật khẩu</label
+              ><input
+                id="registerPassword"
+                name="password"
+                type="password"
+                autocomplete="new-password"
+                required
+                minlength="8"
+                maxlength="128"
+                placeholder="Từ 8 ký tự trở lên"
+              />
+            </div>
+            <div class="field">
+              <label for="registerConfirmPassword">Nhập lại mật khẩu</label
+              ><input
+                id="registerConfirmPassword"
+                name="confirmPassword"
+                type="password"
+                autocomplete="new-password"
+                required
+                minlength="8"
+                maxlength="128"
+                placeholder="Nhập lại mật khẩu"
+              />
+            </div>
+            <p id="authError" class="form-error" role="alert" hidden></p>
+            <button type="submit" class="btn btn-primary btn-wide">
+              Tạo tài khoản
+            </button>
+            <p class="auth-switch">
+              Đã có tài khoản?
+              <a href="dang-nhap.html" data-auth-link="login">Đăng nhập</a>
+            </p>
+          </form>
+          <p class="auth-demo-note">
+            Đồ án tĩnh: đăng ký tạo tài khoản khách hàng trên trình duyệt đang
+            dùng.
+          </p>
+        </div>
+      </section>
+    </main>
+    <div data-include="components/footer.html"></div>
+    <div data-include="components/dialogs.html"></div>
+    <div data-include="components/icons.html"></div>
+    <script src="js/layout.js" defer></script>
+    <script src="js/auth.js" defer></script>
+    <script src="js/script.js" defer></script>
+  </body>
+</html>
