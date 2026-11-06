@@ -1,0 +1,28 @@
+(function(){
+  "use strict";
+  const imageRoot = "https://images.unsplash.com/";
+  const seedProducts = [
+    {id:"sofa-lam",name:"Sofa vải Lam 3 chỗ",category:"Phòng khách",price:12900000,oldPrice:14900000,badge:"Bán chạy",flag:"best",rating:4.9,reviewCount:18,stock:12,image:imageRoot+"photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80",description:"Phom dáng mềm mại, lớp vải dệt thoáng và phần đệm êm vừa phải. Một góc ngồi thư thái cho cả nhà sau ngày dài."},
+    {id:"ghe-an-ly",name:"Ghế ăn Ly gỗ sồi",category:"Phòng ăn",price:2450000,oldPrice:0,badge:"Mới về",flag:"new",rating:4.8,reviewCount:11,stock:24,image:imageRoot+"photo-1503602642458-232111445657?auto=format&fit=crop&w=900&q=80",description:"Đường cong ôm lưng, gỗ sồi sáng màu và tỉ lệ gọn gàng phù hợp với nhiều kiểu bàn ăn."},
+    {id:"giuong-nami",name:"Giường Nami gỗ tự nhiên",category:"Phòng ngủ",price:11200000,oldPrice:0,badge:"Mới về",flag:"new",rating:4.9,reviewCount:9,stock:8,image:imageRoot+"photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=900&q=80",description:"Thiết kế thấp thoáng, đầu giường bo nhẹ và kết cấu chắc chắn giúp căn phòng thêm yên tĩnh."},
+    {id:"ban-cafe-no",name:"Bàn trà Nô",category:"Phòng khách",price:1890000,oldPrice:2290000,badge:"-17%",flag:"sale",rating:4.7,reviewCount:15,stock:19,image:imageRoot+"photo-1499933374294-4584851497cc?auto=format&fit=crop&w=900&q=80",description:"Mặt bàn thanh thoát, cạnh bo tròn an toàn và chân gỗ vững vàng. Dễ kết hợp cùng sofa sáng màu."},
+    {id:"tu-dau-giuong-uno",name:"Tủ đầu giường Uno",category:"Phòng ngủ",price:2190000,oldPrice:0,badge:"Bán chạy",flag:"best",rating:4.8,reviewCount:12,stock:16,image:imageRoot+"photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=900&q=80",description:"Ngăn kéo đóng mở êm, tay nắm tinh gọn và bề mặt dễ vệ sinh cho thói quen mỗi ngày."},
+    {id:"ban-lam-viec-an",name:"Bàn làm việc An",category:"Phòng làm việc",price:3690000,oldPrice:4190000,badge:"Ưu đãi",flag:"sale",rating:4.6,reviewCount:7,stock:10,image:imageRoot+"photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80",description:"Không gian làm việc gọn gàng với mặt bàn rộng vừa đủ và ngăn kéo tiện dụng."},
+    {id:"den-may",name:"Đèn bàn Mây",category:"Phòng ngủ",price:790000,oldPrice:0,badge:"Mới về",flag:"new",rating:4.8,reviewCount:6,stock:31,image:imageRoot+"photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=900&q=80",description:"Ánh sáng ấm dịu, chụp đèn vải tự nhiên và chân đèn tối giản cho góc đọc sách."},
+    {id:"ke-sach-moc",name:"Kệ sách Mộc 4 tầng",category:"Phòng làm việc",price:3290000,oldPrice:0,badge:"Bán chạy",flag:"best",rating:4.9,reviewCount:13,stock:14,image:imageRoot+"photo-1594620302200-9a762244a156?auto=format&fit=crop&w=900&q=80",description:"Kệ mở bốn tầng giúp trưng bày sách, bình hoa và những món đồ nhỏ bạn yêu thích."}
+  ];
+  const stores = [
+    {id:"hcm-thao-dien",city:"TP. Hồ Chí Minh",name:"Showroom Thảo Điền",address:"18 Đường số 11, Phường Thảo Điền, TP. Thủ Đức",hours:"09:00 – 21:00 · Tất cả các ngày",phone:"0900 000 101",x:27,y:42},
+    {id:"hcm-q3",city:"TP. Hồ Chí Minh",name:"Showroom Hồ Con Rùa",address:"42 Trần Cao Vân, Phường Võ Thị Sáu, Quận 3",hours:"09:00 – 21:00 · Tất cả các ngày",phone:"0900 000 102",x:45,y:57},
+    {id:"hcm-q7",city:"TP. Hồ Chí Minh",name:"Showroom Phú Mỹ Hưng",address:"76 Nguyễn Lương Bằng, Phường Tân Phú, Quận 7",hours:"09:00 – 21:00 · Tất cả các ngày",phone:"0900 000 103",x:66,y:72},
+    {id:"hn-cau-giay",city:"Hà Nội",name:"Showroom Cầu Giấy",address:"35 Trần Thái Tông, Phường Dịch Vọng, Quận Cầu Giấy",hours:"09:00 – 21:00 · Tất cả các ngày",phone:"0900 000 201",x:35,y:46},
+    {id:"hn-tay-ho",city:"Hà Nội",name:"Showroom Tây Hồ",address:"28 Xuân Diệu, Phường Quảng An, Quận Tây Hồ",hours:"09:00 – 21:00 · Tất cả các ngày",phone:"0900 000 202",x:59,y:31},
+    {id:"dn-hai-chau",city:"Đà Nẵng",name:"Showroom Hải Châu",address:"62 Nguyễn Văn Linh, Phường Nam Dương, Quận Hải Châu",hours:"09:00 – 21:00 · Tất cả các ngày",phone:"09 0000 0301",x:48,y:54}
+  ];
+  const articles = [
+    {id:"goc-nho",date:"12.06.2026",category:"SẮP XẾP KHÔNG GIAN",title:"Góc nhỏ cũng có thể thành nơi mình thích nhất",summary:"Bắt đầu từ ánh sáng, màu sắc và một món đồ thật sự cần thiết.",image:imageRoot+"photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=900&q=80",body:"Một góc nhà dễ chịu không cần quá nhiều đồ. Hãy thử bắt đầu bằng việc dọn bớt những thứ không dùng, đưa ánh sáng tự nhiên vào phòng và chọn một món nội thất có công năng rõ ràng. Chất liệu gỗ sáng, vải thô và một nhành cây nhỏ thường đủ để tạo nên cảm giác thư thái."},
+    {id:"go-ben",date:"04.06.2026",category:"CHỌN CHẤT LIỆU",title:"Chọn gỗ thế nào để món đồ ở bên mình lâu hơn?",summary:"Một vài điều nên để ý khi chọn chất liệu cho ngôi nhà.",image:imageRoot+"photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80",body:"Khi chọn đồ gỗ, hãy chú ý đến kết cấu, lớp hoàn thiện và cách vệ sinh được khuyến nghị. Một thiết kế có tỉ lệ cân đối, bề mặt dễ chăm sóc và phù hợp cường độ sử dụng sẽ luôn là lựa chọn tốt cho cuộc sống hàng ngày."},
+    {id:"phong-an",date:"28.05.2026",category:"CẢM HỨNG SỐNG",title:"Bữa tối vui hơn khi cả nhà ngồi gần nhau",summary:"Tạo một không gian ăn uống gọn gàng, ấm áp và dễ quây quần.",image:imageRoot+"photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80",body:"Một chiếc bàn vừa tầm, lối đi thông thoáng và ánh đèn ấm là khởi đầu tốt cho góc ăn uống. Hãy ưu tiên những món đồ dễ lau chùi, có thể dùng linh hoạt và để lại đủ khoảng trống cho mọi thành viên."}
+  ];
+  window.MocAnData={seedProducts:seedProducts,stores:stores,articles:articles};
+})();

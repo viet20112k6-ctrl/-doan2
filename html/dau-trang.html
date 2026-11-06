@@ -1,0 +1,31 @@
+<header class="site-header" id="dau-trang">
+    <a class="brand" href="#dau-trang" aria-label="Mộc An, về đầu trang">
+      <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 36 36"><path d="M7 27c7-1 13-7 16-18 4 8 4 16-1 21-5 5-11 3-15-3Z"/><path d="M9 29c4-5 8-9 14-13"/></svg></span>
+      <span class="brand-name">MỘC AN<span>NHÀ CỦA BẠN</span></span>
+    </a>
+    <nav class="main-nav" id="mainNav" aria-label="Điều hướng chính">
+      <a href="#san-pham">Sản phẩm</a>
+      <a href="#san-pham" data-filter-link="new">Hàng mới</a>
+      <a href="#cau-chuyen">Câu chuyện</a>
+      <a href="#cuahang">Cửa hàng</a>
+    </nav>
+    <div class="header-actions">
+      <form class="search-form" id="searchForm" role="search">
+        <button type="submit" aria-label="Tìm sản phẩm"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+        <input id="searchInput" type="search" placeholder="Bạn đang tìm gì?" aria-label="Tìm sản phẩm">
+      </form>
+      <div class="account-wrap" id="accountWrap">
+        <button class="account-button" id="accountButton" type="button" aria-expanded="false" aria-controls="accountPopover">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="7.5" r="4.2"/><path d="M3.8 21c.7-4.5 3.6-6.8 8.2-6.8s7.5 2.3 8.2 6.8"/></svg>
+          <span class="account-button-copy"><small id="accountTopLabel">Đăng nhập / Đăng ký</small><strong id="accountSubLabel">Tài khoản của tôi</strong></span>
+          <span class="account-chevron" aria-hidden="true">⌄</span>
+        </button>
+        <section class="account-popover" id="accountPopover" role="dialog" aria-label="Tài khoản" hidden>
+          <div id="accountPopoverBody"></div>
+        </section>
+      </div>
+      <button class="header-link orders-button" id="ordersButton" type="button">Đơn hàng</button>
+      <button class="cart-button" id="cartButton" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 4h2l2.1 11.2a2 2 0 0 0 2 1.6h8.6a2 2 0 0 0 1.9-1.5L21 8H6"/><circle cx="9.5" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg><span>Giỏ hàng</span><b id="cartCount">0</b></button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Mở menu" aria-expanded="false" type="button"><span></span><span></span></button>
+    </div>
+  </header>

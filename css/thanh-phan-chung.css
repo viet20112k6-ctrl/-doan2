@@ -1,0 +1,22 @@
+.admin-tabs{display:flex;gap:17px;border-bottom:1px solid var(--line);margin:0 0 17px}
+.admin-tabs button{border:0;background:none;padding:0 0 9px;color:var(--muted);font-size:9px;cursor:pointer;border-bottom:1px solid transparent}
+.admin-tabs button.is-active{border-color:var(--rust);color:var(--ink)}
+.admin-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:18px}
+.admin-stat{background:#f1efe8;padding:12px}
+.admin-stat span{display:block;font-size:8px;color:var(--muted)}
+.admin-stat strong{font-family:var(--serif);font-size:21px;font-weight:500}
+.admin-product-row{display:grid;grid-template-columns:1.4fr .7fr .6fr auto;align-items:center;gap:8px;border-bottom:1px solid var(--line);padding:10px 0}
+.admin-product-row strong{font-size:9px}
+.admin-product-row label{font-size:8px;color:var(--muted)}
+.admin-product-row input{width:100%;height:29px;border:1px solid var(--line);padding:5px;font-size:9px;margin-top:3px}
+.admin-product-row button{border:0;background:none;color:var(--olive);font-size:8px;cursor:pointer;padding:4px}
+.admin-topline{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.admin-topline p{font-size:9px;color:var(--muted);margin:0}
+.admin-review{padding:10px 0;border-bottom:1px solid var(--line);font-size:9px}
+.admin-review span{color:#a97a4c;letter-spacing:.07em}
+.admin-review p{margin:4px 0;color:var(--muted)}
+.toast{position:fixed;z-index:70;bottom:23px;left:50%;transform:translate(-50%,12px);background:#283326;color:white;padding:11px 17px;font-size:10px;opacity:0;pointer-events:none;transition:all .25s;box-shadow:0 7px 25px rgba(30,35,27,.17);max-width:90vw;text-align:center}
+.toast.is-visible{opacity:1;transform:translate(-50%,0)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@keyframes fadeIn{from{opacity:.45}to{opacity:1}}
+@keyframes modalIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}

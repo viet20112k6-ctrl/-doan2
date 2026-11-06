@@ -1,0 +1,26 @@
+.newsletter{background:#ebe8dd}
+.newsletter-inner{max-width:1220px;margin:auto;padding:55px 24px 59px;display:flex;align-items:center;justify-content:space-between;gap:40px}
+.newsletter h2{font-size:35px;line-height:1.2;letter-spacing:-.035em;margin:0}
+.newsletter h2 em{color:#807d68}
+.newsletter form{width:min(430px,48%)}
+.newsletter form>label{font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:#77766d}
+.newsletter-field{display:flex;border-bottom:1px solid #aaa89b;margin-top:8px}
+.newsletter-field input{flex:1;min-width:0;border:0;background:none;outline:0;padding:10px 2px;font-size:11px}
+.newsletter-field button{border:0;background:none;font-size:10px;font-weight:600;cursor:pointer;white-space:nowrap}
+.newsletter-field button:hover{color:var(--rust)}
+.newsletter form small{display:block;color:#96958a;font-size:8px;margin-top:9px}
+.site-footer{background:#272d25;color:#e8e6dc;padding:48px max(5vw,24px) 18px}
+.footer-top{max-width:1220px;margin:0 auto 39px;display:grid;grid-template-columns:1.7fr repeat(3,1fr);gap:45px}
+.footer-brand .brand{color:#f0ede4}
+.footer-brand .brand-mark{color:#d9bc94}
+.footer-brand .brand-name span{color:#aeb2a6}
+.footer-brand>p{max-width:300px;color:#b6b8ad;font-size:10px;line-height:1.8;margin:20px 0 16px}
+.footer-hotline{font-size:14px;font-weight:600;letter-spacing:.04em}
+.footer-hotline span{display:block;color:#aeb2a6;font-size:8px;font-weight:400;letter-spacing:.05em;margin-top:3px}
+.footer-column{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.footer-column strong{font-size:10px;margin-bottom:6px}
+.footer-column a,.footer-column button{font-size:9px;color:#b6b8ad;border:0;background:none;padding:0;cursor:pointer;text-align:left}
+.footer-column a:hover,.footer-column button:hover{color:#fff}
+.footer-column .admin-link{color:#d9bc94;margin-top:8px}
+.footer-bottom{max-width:1220px;border-top:1px solid rgba(255,255,255,.14);padding-top:15px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:15px;color:#9da196;font-size:8px}
+.footer-bottom a{color:#ddd7c5}
