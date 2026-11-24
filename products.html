@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh mục sản phẩm – Nội thất Mộc An</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/products.css">
+</head>
+<body>
+  <header id="site-header"></header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <h1 id="catalog-heading">Tất cả sản phẩm nội thất</h1>
+        <p>Tìm kiếm, lọc theo không gian và khoảng giá để chọn sản phẩm phù hợp nhất</p>
+      </div>
+    </section>
+
+    <div class="container catalog-layout">
+      <!-- Sidebar bộ lọc -->
+      <aside class="sidebar-card">
+        <div class="sidebar-group">
+          <h3>Danh mục không gian</h3>
+          <ul class="cat-list" id="sidebar-cat-list"></ul>
+        </div>
+
+        <div class="sidebar-group">
+          <h3>Khoảng giá (VNĐ)</h3>
+          <div class="form-group">
+            <label for="price-min">Giá tối thiểu</label>
+            <input type="number" id="price-min" class="form-control" placeholder="Ví dụ: 2000000" min="0" step="500000">
+          </div>
+          <div class="form-group">
+            <label for="price-max">Giá tối đa</label>
+            <input type="number" id="price-max" class="form-control" placeholder="Ví dụ: 15000000" min="0" step="500000">
+          </div>
+          <button type="button" id="btn-apply-filter" class="btn btn-primary" style="width:100%;">Áp dụng bộ lọc</button>
+        </div>
+      </aside>
+
+      <!-- Danh sách sản phẩm -->
+      <div>
+        <div class="catalog-toolbar">
+          <form id="catalog-search-form" style="display:flex;gap:8px;flex:1;min-width:220px;">
+            <input type="text" id="catalog-search" class="form-control" placeholder="Nhập từ khóa tìm sản phẩm (sofa, gỗ sồi, bàn ăn...)">
+            <button type="submit" class="btn btn-primary">Tìm</button>
+          </form>
+          <div style="display:flex;align-items:center;gap:12px;">
+            <span id="catalog-count" style="font-size:0.88rem;color:var(--text-muted);white-space:nowrap;"></span>
+            <select id="catalog-sort" class="form-control" style="width:auto;">
+              <option value="newest">Mới nhất</option>
+              <option value="price-asc">Giá: Thấp đến cao</option>
+              <option value="price-desc">Giá: Cao đến thấp</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="product-grid catalog-grid" id="catalog-product-grid"></div>
+        <div class="pagination" id="catalog-pagination"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer id="site-footer"></footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/products.js"></script>
+  <script>initProductsPage();</script>
+</body>
+</html>

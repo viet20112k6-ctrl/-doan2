@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản trị hệ thống – Nội thất Mộc An</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..700;1,9..40,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+  <!-- QT01: Trang đăng nhập quản trị -->
+  <div id="admin-login-wrap" class="admin-login-wrap">
+    <div class="admin-login-card">
+      <div style="text-align:center;margin-bottom:22px;">
+        <div class="brand-mark" style="margin:0 auto 10px;width:46px;height:46px;font-size:1.4rem;">M</div>
+        <h2 style="font-size:1.55rem;">Quản trị Mộc An</h2>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin-top:4px;">Đăng nhập để quản lý danh mục, sản phẩm và đơn hàng</p>
+      </div>
+
+      <div id="admin-login-error" class="alert alert-error" style="display:none;"></div>
+
+      <form id="admin-login-form">
+        <div class="form-group">
+          <label for="admin-email">Email quản trị</label>
+          <input type="email" id="admin-email" class="form-control" value="admin@mocan.vn" required>
+        </div>
+        <div class="form-group">
+          <label for="admin-pass">Mật khẩu</label>
+          <input type="password" id="admin-pass" class="form-control" value="admin123" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Đăng nhập quản trị</button>
+      </form>
+
+      <div style="margin-top:18px;text-align:center;font-size:0.84rem;color:var(--text-muted);">
+        Tài khoản mặc định: <strong>admin@mocan.vn</strong> / <strong>admin123</strong><br>
+        <a href="index.html" style="color:var(--terracotta);display:inline-block;margin-top:8px;">← Quay lại trang bán hàng</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Giao diện quản trị chính -->
+  <div id="admin-shell" class="admin-shell" style="display:none;">
+    <aside class="admin-sidebar">
+      <div class="admin-brand">
+        <span class="brand-mark" style="background:var(--terracotta);">M</span>
+        <div>
+          <strong style="font-family:'Playfair Display',serif;font-size:1.15rem;">Mộc An Admin</strong>
+          <div style="font-size:0.74rem;opacity:0.72;">Phân hệ quản trị</div>
+        </div>
+      </div>
+
+      <nav class="admin-nav">
+        <button data-tab="dashboard" class="active">📊 Tổng quan</button>
+        <button data-tab="categories">🗂 Quản lý danh mục</button>
+        <button data-tab="products">🪑 Quản lý sản phẩm</button>
+        <button data-tab="orders">📦 Quản lý đơn hàng</button>
+        <button data-tab="customers">👥 Tài khoản khách hàng</button>
+        <button data-tab="stats">📈 Thống kê – Báo cáo</button>
+        <a href="index.html" style="margin-top:12px;border-top:1px solid rgba(255,254,250,0.12);padding-top:14px;">🏠 Xem trang bán hàng</a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <div style="margin-bottom:8px;">👤 <strong id="admin-user-name">Admin</strong></div>
+        <button id="btn-admin-logout" class="btn btn-sm btn-accent" style="width:100%;">Đăng xuất</button>
+      </div>
+    </aside>
+
+    <main class="admin-main" id="admin-content"></main>
+  </div>
+
+  <!-- Modal Thêm / Sửa sản phẩm (QT03) -->
+  <div id="product-modal" class="modal-backdrop">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 id="pm-title">Thêm sản phẩm mới</h3>
+        <button class="modal-close" onclick="document.getElementById('product-modal').classList.remove('open')">&times;</button>
+      </div>
+      <div id="pm-error" class="alert alert-error" style="display:none;"></div>
+      <form id="product-modal-form">
+        <input type="hidden" id="pm-id">
+        <div class="form-group">
+          <label>Tên sản phẩm *</label>
+          <input type="text" id="pm-name" class="form-control" required>
+        </div>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label>Danh mục *</label>
+            <select id="pm-cat" class="form-control" required></select>
+          </div>
+          <div class="form-group">
+            <label>Số lượng tồn *</label>
+            <input type="number" id="pm-stock" class="form-control" min="0" required>
+          </div>
+        </div>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label>Giá bán (VNĐ) *</label>
+            <input type="number" id="pm-price" class="form-control" min="1000" step="1000" required>
+          </div>
+          <div class="form-group">
+            <label>Giá cũ (nếu ưu đãi)</label>
+            <input type="number" id="pm-old-price" class="form-control" min="0" step="1000">
+          </div>
+        </div>
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label>Chất liệu</label>
+            <input type="text" id="pm-material" class="form-control" placeholder="VD: Gỗ sồi tự nhiên">
+          </div>
+          <div class="form-group">
+            <label>Kích thước</label>
+            <input type="text" id="pm-size" class="form-control" placeholder="VD: 160 x 80 x 75 cm">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Màu sắc</label>
+          <input type="text" id="pm-color" class="form-control" placeholder="VD: Nâu gỗ tự nhiên / Be kem">
+        </div>
+        <div class="form-group">
+          <label>Đường dẫn hình ảnh (URL) hoặc tải ảnh từ máy</label>
+          <input type="text" id="pm-img-url" class="form-control" placeholder="https://...">
+          <input type="file" id="pm-img-file" accept="image/*" style="margin-top:8px;font-size:0.85rem;">
+        </div>
+        <div class="form-group">
+          <label>Mô tả chi tiết</label>
+          <textarea id="pm-desc" class="form-control" rows="3"></textarea>
+        </div>
+        <div style="display:flex;gap:18px;margin-bottom:18px;font-size:0.9rem;">
+          <label><input type="checkbox" id="pm-new"> Đánh dấu “Mới về”</label>
+          <label><input type="checkbox" id="pm-best"> Đánh dấu “Bán chạy”</label>
+        </div>
+        <div style="display:flex;justify-content:flex-end;gap:10px;">
+          <button type="button" class="btn btn-outline" onclick="document.getElementById('product-modal').classList.remove('open')">Hủy</button>
+          <button type="submit" class="btn btn-primary">Lưu sản phẩm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/admin.js"></script>
+  <script>initAdminPage();</script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+/* ==========================================================================
+   MỘC AN FURNITURE - PRODUCTS CATALOG STYLES (products.html - ND01, ND02)
+   ========================================================================== */
+
+.page-banner {
+  background: var(--olive-dark);
+  color: #fffefa;
+  padding: 34px 0;
+  margin-bottom: 32px;
+}
+
+.page-banner h1 {
+  color: #fffefa;
+  font-size: 1.9rem;
+  margin-bottom: 6px;
+}
+
+.page-banner p {
+  color: rgba(255, 254, 250, 0.8);
+  font-size: 0.95rem;
+}
+
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  gap: 28px;
+  align-items: start;
+  margin-bottom: 48px;
+}
+
+.sidebar-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  position: sticky;
+  top: 94px;
+}
+
+.sidebar-group {
+  margin-bottom: 22px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-group:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.sidebar-group h3 {
+  font-size: 1.05rem;
+  margin-bottom: 12px;
+}
+
+.cat-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cat-list button {
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 8px 10px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  color: var(--text-main);
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.92rem;
+}
+
+.cat-list button:hover {
+  background: var(--bg-page);
+}
+
+.cat-list button.active {
+  background: var(--olive-light);
+  color: var(--olive-dark);
+  font-weight: 600;
+}
+
+.catalog-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+  border-radius: var(--radius);
+}
+
+.catalog-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+
+.page-btn {
+  min-width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-main);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.page-btn.active {
+  background: var(--olive);
+  border-color: var(--olive);
+  color: #fff;
+}
+
+/* ---------- Catalog Responsive ---------- */
+@media (max-width: 1024px) {
+  .catalog-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 820px) {
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+  .sidebar-card { position: static; }
+}
+
+@media (max-width: 520px) {
+  .catalog-grid { grid-template-columns: 1fr; }
+}

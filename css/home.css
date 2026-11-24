@@ -1,0 +1,226 @@
+/* ==========================================================================
+   MỘC AN FURNITURE - HOME PAGE STYLES (index.html)
+   ========================================================================== */
+
+/* ---------- Hero Section ---------- */
+.hero {
+  background: linear-gradient(120deg, #354332 0%, #52614b 60%, #65745c 100%);
+  color: #fffefa;
+  padding: 64px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.hero-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #e6d5c3;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255, 254, 250, 0.28);
+  padding: 4px 12px;
+  border-radius: 999px;
+}
+
+.hero h1 {
+  color: #fffefa;
+  font-size: clamp(2rem, 3.8vw, 3.1rem);
+  margin-bottom: 18px;
+}
+
+.hero p {
+  color: rgba(255, 254, 250, 0.88);
+  font-size: 1.05rem;
+  max-width: 520px;
+  margin-bottom: 28px;
+}
+
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero-visual {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+  aspect-ratio: 4 / 3;
+  background: #2b3628;
+}
+
+.hero-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 56px 0;
+}
+
+.section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.section-title {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+}
+
+.section-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-top: 4px;
+}
+
+/* ---------- Filter Bar (Home) ---------- */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 24px;
+  background: var(--bg-card);
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+
+.filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-pill {
+  padding: 7px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-page);
+  color: var(--text-main);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-pill:hover {
+  border-color: var(--olive);
+}
+
+.filter-pill.active {
+  background: var(--olive);
+  border-color: var(--olive);
+  color: #fff;
+}
+
+/* ---------- Category Cards (Home) ---------- */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  transition: all 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category-card:hover {
+  border-color: var(--olive);
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-2px);
+}
+
+.category-card h3 {
+  font-size: 1.15rem;
+}
+
+.category-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.category-count {
+  margin-top: auto;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--terracotta);
+}
+
+/* ---------- Story & Showroom ---------- */
+.story-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+}
+
+.story-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.stat-item {
+  background: var(--bg-page);
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  text-align: center;
+}
+
+.stat-item strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  color: var(--terracotta);
+}
+
+.stat-item span {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Home Responsive ---------- */
+@media (max-width: 1024px) {
+  .category-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 820px) {
+  .hero-grid,
+  .story-box {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .category-grid { grid-template-columns: 1fr; }
+  .story-stats { grid-template-columns: 1fr; }
+}

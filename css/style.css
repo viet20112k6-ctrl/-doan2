@@ -1,0 +1,21 @@
+/* ==========================================================================
+   MỘC AN FURNITURE - MAIN BUNDLE STYLESHEET
+   Nhúng tất cả các mô-đun CSS theo từng trang:
+   - common.css         : Reset, màu sắc, font, layout, header, footer, modal, toast
+   - home.css           : Trang chủ (Hero, không gian, câu chuyện, showroom)
+   - products.css       : Danh mục sản phẩm, bộ lọc, sắp xếp, phân trang
+   - product-detail.css : Chi tiết sản phẩm, gallery, bảng thông số
+   - auth.css           : Đăng nhập & Đăng ký
+   - cart.css           : Giỏ hàng, stepper, voucher, freeship
+   - checkout.css       : Đặt hàng, phương thức thanh toán VietQR / thẻ / ví
+   - orders.css         : Đơn hàng của tôi, tiến trình 4 bước, hóa đơn in ấn
+   ========================================================================== */
+
+@import url('common.css');
+@import url('home.css');
+@import url('products.css');
+@import url('product-detail.css');
+@import url('auth.css');
+@import url('cart.css');
+@import url('checkout.css');
+@import url('orders.css');
